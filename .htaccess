@@ -1,7 +1,6 @@
-#remove html file extension https://irudrapatel.github.io/index.html
-# to https://irudrapatel.github.io/index
 RewriteEngine On
-change anything and don't run the Rule!
-RewriteCond %{REQUEST_FILENAME} !-d
+
+# Remove .html extension from URLs
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ $1.html [L]
